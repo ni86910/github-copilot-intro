@@ -13,21 +13,22 @@
 
 ### 3. Harness Engineering
 - 包含:工具清單、回饋機制、循環工作能力、instructions、agents、skills、hooks、MCP...等
-- 重點不再是單次的 prompt，而是有沒有把整個使用環境工程化，讓AI可靠的完成任務。
+- 重點不再是單次的 prompt，而是有沒有搭建利於AI工作的環境，讓AI可靠的完成任務。
 
 #### 參考
 [Learn Harness Engineering 課程](https://walkinglabs.github.io/learn-harness-engineering/zh-TW/)
 
 ---
 ## 資料夾結構
+
 <details open>
 <summary>📁 <strong>.github</strong></summary>
-<ul>
+<ul style="list-style-type: none;">
   <li>📄 <code>copilot-instructions.md</code></li>
   <li>
     <details open>
     <summary>📁 <strong>agents</strong></summary>
-    <ul>
+    <ul style="list-style-type: none;">
       <li>📄 <code>Project Code Reviewer.agent.md</code></li>
       <li>📄 <code>Run with code review.agent.md</code></li>
     </ul>
@@ -36,7 +37,7 @@
   <li>
     <details open>
     <summary>📁 <strong>hooks</strong></summary>
-    <ul>
+    <ul style="list-style-type: none;">
       <li>🧩 <code>format.json</code></li>
       <li>🧩 <code>audit.json</code></li>
     </ul>
@@ -45,7 +46,7 @@
   <li>
     <details open>
     <summary>📁 <strong>scripts(非制式規定)</strong></summary>
-    <ul>
+    <ul style="list-style-type: none;">
       <li>⚙️ <code>format-after-edit.ps1</code></li>
       <li>⚙️ <code>log-tool-use.ps1</code></li>
     </ul>
@@ -54,7 +55,7 @@
   <li>
     <details open>
     <summary>📁 <strong>instructions</strong></summary>
-    <ul>
+    <ul style="list-style-type: none;">
       <li>📄 <code>html.instructions.md</code></li>
       <li>📄 <code>prompt.instructions.md</code></li>
     </ul>
@@ -63,7 +64,7 @@
   <li>
     <details open>
     <summary>📁 <strong>prompts</strong></summary>
-    <ul>
+    <ul style="list-style-type: none;">
       <li>📄 <code>cv-detail-template-markdown-to-sql.prompt.md</code></li>
       <li>📄 <code>error-fix.prompt.md</code></li>
       <li>📄 <code>refactor.prompt.md</code></li>
@@ -73,11 +74,11 @@
   <li>
     <details open>
     <summary>📁 <strong>skills</strong></summary>
-    <ul>
+    <ul style="list-style-type: none;">
       <li>
         <details open>
         <summary>📁 <strong>table2</strong></summary>
-        <ul>
+        <ul style="list-style-type: none;">
           <li>📄 <code>SKILL.md</code></li>
         </ul>
         </details>
@@ -85,7 +86,7 @@
       <li>
         <details open>
         <summary>📁 <strong>frontend-design</strong></summary>
-        <ul>
+        <ul style="list-style-type: none;">
           <li>📄 <code>SKILL.md</code></li>
         </ul>
         </details>
@@ -135,15 +136,15 @@ applyTo: 'AppData/data/*.cs'
 例如：
 
 - **Plan agent**：只負責規劃，不直接改碼
-- **Reviewer agent**：偏重找風險、找缺陷
-- **Docs agent**：專門整理說明文件
+- **Code Reviewer**：偏重找風險、找缺陷
+- **Test Engineer agent**：產生測試
 
 這可以幫團隊把常見工作流程標準化。
-規劃 agent -> 實作 agent -> review agent
+規劃 agent -> 實作 agent -> review agent -> test engineer
 
 ### 3. Skills
 
-特點: 漸進式載入，根據 description 設定，由AI判斷跟當前任務相關時載入，也可以手動引用觸發
+特點: 漸進式載入，根據 description 設定，由AI判斷跟當前任務相關時載入，也可以手動透過斜線命令引用 ex.`/do-something`
 
 ```yml
 description: 專案內建的 Table2 元件的使用指南。使用 Angular Material Table 實作的共用表格。當需要顯示列表資料時使用此元件。
@@ -169,9 +170,8 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 
 用途：
 
-- 重複使用常見提示詞
-- 降低每次重新描述需求的成本
-- 產生 MR 說明、生成測試案例等情境
+- 重複使用常見提示詞，不用每次再重新打一次
+- 可用斜線命令引用 ex.`/do-something`
 
 ### 5. Hooks
 
