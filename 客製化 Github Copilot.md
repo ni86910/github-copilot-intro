@@ -17,6 +17,7 @@
 
 #### 參考
 [Learn Harness Engineering 課程](https://walkinglabs.github.io/learn-harness-engineering/zh-TW/)
+[VSCode 客製化文件](https://code.visualstudio.com/learn/customizations/1-why-customization-matter)
 
 ---
 ## 資料夾結構
