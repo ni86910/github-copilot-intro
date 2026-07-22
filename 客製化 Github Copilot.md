@@ -188,6 +188,7 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 - `preToolUse` 阻止危險指令
 - `postToolUse` 在修改後自動執行 formatter 或特定檢查
 
+[[hook資訊整理]]
 #### 參考
 [VSCode文件範例](https://vscode.com.tw/docs/copilot/customization/hooks#_usage-scenarios)
 
