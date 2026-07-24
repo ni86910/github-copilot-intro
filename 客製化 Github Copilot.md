@@ -15,7 +15,7 @@
 
 #### 參考
 [Learn Harness Engineering 課程](https://walkinglabs.github.io/learn-harness-engineering/zh-TW/)
-[VSCode 客製化文件](https://code.visualstudio.com/learn/customizations/1-why-customization-matter)
+
 
 ---
 ## 資料夾結構
@@ -101,9 +101,7 @@
 ## 客製化規範與強化能力
 
 ### 參考資源
-
-[awesome-copilot](https://github.com/github/awesome-copilot)
-[everything-claude-code 介紹](https://github.com/affaan-m/ecc)
+[VSCode 客製化文件](https://code.visualstudio.com/learn/customizations/1-why-customization-matter)
 
 ### 1. Prompts
 
@@ -238,3 +236,16 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 [Claude Code 團隊 減少提示詞](https://www.bnext.com.tw/article/91455/anthropic-engineer-claude-harness)
 >但到了最新一代，又倒回去。模型反而想要更短的提示，因為範例會綁住它的想像力，它其實比你給的範例更有想法。
 >Shihipar 說，Claude Code 團隊近期把系統提示砍掉了大約八成，原則從「規定它不能做什麼」改成「給它足夠的背景」，少下禁令、多給脈絡。
+
+---
+## 延伸分享
+
+- github 官方維護的 copilot 配置集合
+  [awesome-copilot](https://github.com/github/awesome-copilot)
+- Anthropic 黑客松冠軍的 claude code 工作流
+  [everything-claude-code](https://github.com/affaan-m/ecc)
+- 測試驅動開發工作流
+  [superpowers](https://github.com/obra/superpowers)
+- Typescript 大神 Matt Pocock 的工作流
+  [Matt Pocock skills](https://github.com/mattpocock/skills)
+  [ 700 萬人下載的 /grill-me，Matt Pocock 到底寫了什麼？](https://www.youtube.com/watch?v=aR97E7aKEgg)
