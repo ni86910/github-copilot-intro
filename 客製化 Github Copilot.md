@@ -105,23 +105,41 @@
 [awesome-copilot](https://github.com/github/awesome-copilot)
 [everything-claude-code 介紹](https://github.com/affaan-m/ecc)
 
-### 1. Instructions
+### 1. Prompts
+
+**注入時機**: 手動輸入斜線命令引用 `/do-something`
+
+用途：
+- 重複使用常見提示詞，不用每次再重新打一次
+``` markdown
+---
+name: "refactor"
+description: "將Angular元件遷移至18版寫法"
+---
+1. 將資料夾底下的元件改成standalone元件，原本所屬的module檔案中刪除相關引用
+2. 將angular結構型指令 改成 angular 內建的流程控制語法
+```
+### 2. Instructions
 
 **注入時機**: 根據 applyTo 設定，在AI讀取特定路徑時注入
 
-```yml
-applyTo: 'AppData/data/*.cs'
+``` markdown
+---
+description: 'Angular HTML 模板規則'
+applyTo: '**/*.html'
+---
+- 優先使用 Bootstrap class，其次是 SCSS，最後才使用行內style。
+- 在 Angular 模板中，創建或更新標記時，優先使用新的內置控制流語法，如 `@if` 和 `@for`，而不是 `*ngIf` 和 `*ngFor`。
 ```
-
-- 全域的 `.github/copilot-instructions.md`
-- `.github/instructions/**/*.instructions.md`
 
 適合：
 - 說明專案的 coding style
-- 說明潛規則、命名規範、資料夾慣例
-- 可用於個人專屬的提示詞 ex. `.github/instructions/personal/*.instructions.md`
+- 說明潛規則、命名規範、資料夾慣例 `applyTo: 'AppData/data/*.cs'`
 
-### 2. Agents
+備註：
+- 會遞迴搜尋 instructions 檔案，可用於資料夾管理 ex. `.github/instructions/**/*.instructions.md`
+
+### 3. Agents
 
 **注入時機**: 切換agent後對話開頭注入提示詞
 
@@ -137,33 +155,34 @@ applyTo: 'AppData/data/*.cs'
 這可以幫團隊把常見工作流程標準化。
 plan agent -> 實作 agent -> code reviewer -> test engineer
 
-### 3. Skills
+### 4. Skills
 
-**注入時機**: 漸進式載入，根據 description 設定，由 AI 判斷跟當前任務相關時載入，也可以手動透過斜線命令引用 ex.`/do-something`
+**注入時機**: 漸進式載入，根據 description 設定，由 AI 判斷跟當前任務相關時載入，也可以手動透過斜線命令引用 `/do-something`
 
-```yml
+``` markdown
+---
+name: table2
+
 description: 專案內建的 Table2 元件的使用指南。使用 Angular Material Table 實作的共用表格。當需要顯示列表資料時使用此元件。
+---
+......
 ```
 
 適合：
-- 封裝可重複使用的工作流程
+- 封裝可重複使用的工作流程、
 - 可包含多種類的資源，如 文字提示、scripts、doc...等
 - 可由 AI 視需求決定是否載入
-- 適合高頻、固定步驟任務
 
 例如：
 - `create-standard-component`
 - `use-table2`
 
+備註：
+- vscode 設定 chat.agentSkillsLocations
+- 若要將 .github/skills 內入版控，可以考慮將個人 skills 放在 .agents/skills 底下
 #### 參考資源
 
 [skills介紹文章](https://kaochenlong.com/claude-code-skills)
-
-### 4. Prompts
-
-用途：
-- 重複使用常見提示詞，不用每次再重新打一次
-- 可用斜線命令引用 ex.`/do-something`
 
 ### 5. Hooks
 
