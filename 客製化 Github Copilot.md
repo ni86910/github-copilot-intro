@@ -111,6 +111,8 @@
 
 用途：
 - 重複使用常見提示詞，不用每次再重新打一次
+
+**refactor.prompt.md**
 ``` markdown
 ---
 name: "refactor"
