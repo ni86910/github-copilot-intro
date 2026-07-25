@@ -10,8 +10,8 @@
 - 怎麼避免上下文污染
 
 ### 3. Harness Engineering
-- 包含:工具清單、回饋機制、循環工作能力、instructions、agents、skills、hooks、MCP...等
 - 重點不再是單次的 prompt，而是搭建一個讓 AI 能自主觀察、行動、驗證、修正的工作環境，讓 AI 可靠地完成多步驟任務。
+- 大致包含：工具清單、回饋機制、循環工作能力，客製化的 instructions、agents、skills、hooks、MCP...等
 
 #### 參考
 [Learn Harness Engineering 課程](https://walkinglabs.github.io/learn-harness-engineering/zh-TW/)
@@ -110,7 +110,7 @@
 用途：
 - 重複使用常見提示詞，不用每次再重新打一次
 
-**refactor.prompt.md**
+範例：**refactor.prompt.md**
 ``` markdown
 ---
 name: "refactor"
@@ -123,6 +123,7 @@ description: "將Angular元件遷移至18版寫法"
 
 **注入時機**: 根據 applyTo 設定，在AI讀取特定路徑時注入
 
+範例：**html.instructions.md**
 ``` markdown
 ---
 description: 'Angular HTML 模板規則'
@@ -147,6 +148,17 @@ applyTo: '**/*.html'
 - 專屬角色設定，讓 agent/subagent 只做一件事
 - 設定一組工具權限
 
+範例：**plan.agent.md**
+``` markdown
+---
+name: Plan
+description: 研究並制定多步驟計劃
+tools: ['search', 'read', 'web']
+---
+1. You are a PLANNING AGENT, pairing with the user to create a detailed, actionable plan.
+......
+```
+
 例如：
 - **Plan agent**：只負責規劃，不直接改碼
 - **Code Reviewer**：偏重找風險、找缺陷
@@ -159,34 +171,35 @@ plan agent -> 實作 agent -> code reviewer -> test engineer
 
 **注入時機**: 漸進式載入，根據 description 設定，由 AI 判斷跟當前任務相關時載入，也可以手動透過斜線命令引用 `/do-something`
 
+範例：**.github/use-table2/SKILL.md**
 ``` markdown
 ---
-name: table2
+name: use-table2
 
 description: 專案內建的 Table2 元件的使用指南。使用 Angular Material Table 實作的共用表格。當需要顯示列表資料時使用此元件。
 ---
-......
+1. ......table2的使用說明
+2. 有需要使用案例可以參考 `src/app/backend/sys/sys-title.component.ts`
 ```
 
-適合：
-- 封裝可重複使用的工作流程、
-- 可包含多種類的資源，如 文字提示、scripts、doc...等
+特點：
 - 可由 AI 視需求決定是否載入
+- 可包含多種類的資源，如 文字提示、scripts、doc...等
 
 例如：
 - `create-standard-component`
 - `use-table2`
 
 備註：
-- vscode 設定 chat.agentSkillsLocations
 - 若要將 .github/skills 內入版控，可以考慮將個人 skills 放在 .agents/skills 底下
+- 潮狀的 skills 可以在 vscode 設定 chat.agentSkillsLocations 自訂額外的 skills 載入目錄
 #### 參考資源
 
 [skills介紹文章](https://kaochenlong.com/claude-code-skills)
 
 ### 5. Hooks
 
-特點: 穩定觸發
+特點：透過程式執行，穩定觸發
 
 用途：
 - 在特定生命週期自動觸發命令、或注入額外的提示
@@ -195,10 +208,11 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 例如：
 - `preToolUse` 阻止危險指令
 - `postToolUse` 在修改後自動執行 formatter 或特定檢查
-
-[[hook資訊整理]]
+- 
 #### 參考
-[VSCode文件範例](https://vscode.com.tw/docs/copilot/customization/hooks#_usage-scenarios)
+[VSCode hook 範例](https://vscode.com.tw/docs/copilot/customization/hooks#_usage-scenarios)
+[VSCode 支援的生命週期](https://vscode.com.tw/docs/copilot/customization/hooks#_hook-lifecycle-events)
+[Copilot CLI 支援的生命週期](https://docs.github.com/en/copilot/reference/hooks-reference#hook-events)
 
 ### 6. MCP Servers
 
