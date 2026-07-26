@@ -217,16 +217,19 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 ### 6. MCP Servers
 
 用途：
-- 讓 Copilot 能跟外部系統用標準方式互動
+- 讓 AI 能跟外部系統用標準方式互動
 - 不只讀本機檔案，也能連接 外部文件系統、其他 API
 
-例子：
-- GitHub MCP Server
-- 內部知識庫
-- mantis、Gitlab issue
+例如：
+- [Gmail MCP](https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server?hl=zh-tw)、[Microsoft Learn MCP](https://learn.microsoft.com/zh-tw/training/support/mcp)
+- 內部知識庫、mantis、Gitlab issue
 
 注意：
-- MCP Server 會在對話一開始時就將完整的溝通格式注入，裝太多用不到的會造成 context 佔用
+- MCP Server 會在對話一開始時就將完整的溝通格式注入，裝太多會造成 context 佔用
+
+#### 參考
+[Copilot CLI MCP 設定](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers)
+[VSCode MCP 設定](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
 
 ### 7. Plugins
 
@@ -243,23 +246,21 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 
 - 從給予限制、詳細定義步驟 ---> 到補充背景脈絡、目標、成功標準
 
-#### 參考
-[OpenAi GPT-5.5 遷移指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.5)
+#### 參考文章
+**[OpenAi GPT-5.5 遷移指南](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.5)**
 > **使用結果優先提示可以更有效地執行任務：** GPT-5.5 更擅長從明確的目標出發，遵循約束條件，並將產品意圖轉化為具體的後續步驟。描述預期結果、成功標準、允許的副作用、證據規則和輸出格式。除非具體步驟至關重要，否則避免提供詳細的流程指導。
 
-[Claude Code 團隊 減少提示詞](https://www.bnext.com.tw/article/91455/anthropic-engineer-claude-harness)
+**[Claude Code 團隊 減少提示詞](https://www.bnext.com.tw/article/91455/anthropic-engineer-claude-harness)**
 >但到了最新一代，又倒回去。模型反而想要更短的提示，因為範例會綁住它的想像力，它其實比你給的範例更有想法。
 >Shihipar 說，Claude Code 團隊近期把系統提示砍掉了大約八成，原則從「規定它不能做什麼」改成「給它足夠的背景」，少下禁令、多給脈絡。
 
 ---
 ## 延伸分享
 
-- github 官方維護的 copilot 配置集合
-  [awesome-copilot](https://github.com/github/awesome-copilot)
-- Anthropic 黑客松冠軍的 claude code 工作流
-  [everything-claude-code](https://github.com/affaan-m/ecc)
-- 測試驅動開發工作流
-  [superpowers](https://github.com/obra/superpowers)
-- Typescript 大神 Matt Pocock 的工作流
+- **github 官方維護的 copilot 配置集合**  [awesome-copilot](https://github.com/github/awesome-copilot)
+- **Anthropic 黑客松冠軍的 claude code 工作流**  [everything-claude-code](https://github.com/affaan-m/ecc)
+- **測試驅動開發工作流**(TDD)  [superpowers](https://github.com/obra/superpowers)
+- **規格驅動開發工作流**(SDD)  [Spec Kit](https://github.com/github/spec-kit)、[OpenSpec (相對輕量)](https://github.com/Fission-AI/openspec)
+- **Typescript 大神 Matt Pocock 的工作流** 
   [Matt Pocock skills](https://github.com/mattpocock/skills)
-  [ 700 萬人下載的 /grill-me，Matt Pocock 到底寫了什麼？](https://www.youtube.com/watch?v=aR97E7aKEgg)
+  [ 700 萬人下載的 /grill-me，Matt Pocock 到底寫了什麼？](https://www.youtube.com/watch?v=aR97E7aKEgg) -->十分推薦的youtube頻道
