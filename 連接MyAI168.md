@@ -1,4 +1,10 @@
 [MyAI 168開發者文件](https://www.myai168.com/futaba/developer/)
+
+## VSCode
+
+[VSCode BYOK文件](https://code.visualstudio.com/docs/agent-customization/language-models#_bring-your-own-language-model-key)
+
+---
 ## Copilot CLI
 
 [Copilot CLI BYOK 文件](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models)
@@ -26,7 +32,5 @@ copilot
 copilot --model gpt-5.6-terra
 ```
 
-## VSCode
-[VSCode BYOK文件](https://code.visualstudio.com/docs/agent-customization/language-models#_bring-your-own-language-model-key)
 
 
