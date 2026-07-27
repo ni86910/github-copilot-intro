@@ -18,7 +18,19 @@
 
 
 ---
-## 資料夾結構
+## 檔案位置
+
+### VSCode 支援從多個來源載入
+
+**在VSCode設定中 搜尋"chat locations"**
+![[螢幕擷取畫面 2026-07-27 094847.png]]
+
+
+ #### 1. 使用者範圍(所有專案都吃得到)
+基本上是在`C:\Users\你的使用者名稱\.copilot`資料夾底下，內部結構同下方的`.github`資料夾
+  
+  #### 2. 專案範圍
+在專案根目錄的`.github`資料夾底下
 
 <details open>
 <summary>📁 <strong>.github</strong></summary>
@@ -192,7 +204,7 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 
 備註：
 - 若要將 .github/skills 內入版控，可以考慮將個人 skills 放在 .agents/skills 底下
-- 潮狀的 skills 可以在 vscode 設定 chat.agentSkillsLocations 自訂額外的 skills 載入目錄
+- 巢狀的 skills 可以在 vscode 設定 chat.agentSkillsLocations 自訂額外的 skills 載入目錄
 #### 參考資源
 
 [skills介紹文章](https://kaochenlong.com/claude-code-skills)
