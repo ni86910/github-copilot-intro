@@ -275,4 +275,4 @@ description: 專案內建的 Table2 元件的使用指南。使用 Angular Mater
 - **規格驅動開發工作流**(SDD)  [Spec Kit](https://github.com/github/spec-kit)、[OpenSpec (相對輕量)](https://github.com/Fission-AI/openspec)
 - **Typescript 大神 Matt Pocock 的工作流** 
   [Matt Pocock skills](https://github.com/mattpocock/skills)
-  [ 700 萬人下載的 /grill-me，Matt Pocock 到底寫了什麼？](https://www.youtube.com/watch?v=aR97E7aKEgg) -->十分推薦的youtube頻道
+  [ 700 萬人下載的 /grill-me，Matt Pocock 到底寫了什麼？](https://www.youtube.com/watch?v=aR97E7aKEgg) -->**十分推薦的youtube頻道**
