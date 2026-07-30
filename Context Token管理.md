@@ -18,13 +18,13 @@
 ### 3. 控制上下文範圍
 
 - 只附加需要的檔案、段落
-- 不要把無關的大段 log、文件、無用註解都塞進去 ex. `npx tsc --noEmit`、AppDataName IsRequired 等設定
+- 不要把無關的大段 log、文件、無用註解都塞進去 ex. `npx tsc --noEmit`
 - AI 只看得到你給他的東西 ex.看不到程式功能管理的設定、共用代碼(MCP)
 - 新的任務應該要考慮開新的 session，避免不相關的上下文汙染、重複送出
 
 ### 4. 把簡單的雜事交給子代理
 
-- 用 subagent 做大範圍探索、研究，主 Agent 只接收彙整結果、結論，省去過程
+- 用 subagent 做大範圍探索，主 Agent 只接收彙整結果、結論，省去過程
 - 多一層溝通的 token 消耗
 - 減少不必要的過程資訊累積在 context ，減少後續的 token 消耗，也保持 context 乾淨
 
@@ -36,7 +36,7 @@
 
 #### 參考
 [OpenAI 提示詞快取](https://developers.openai.com/api/docs/guides/prompt-caching)
-[OpenAI 模型計價](https://developers.openai.com/api/docs/pricing)
+[Github Copilot 模型計價]([https://developers.openai.com/api/docs/pricing](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing#pricing-tables))
 
 ### 6. 任務過程盡量不要調整Harness、切換model
 
