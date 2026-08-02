@@ -1,5 +1,5 @@
 [MyAI 168開發者文件](https://www.myai168.com/futaba/developer/)
-
+**注意**：有些組合似乎無法快取提示詞，導致token消耗增加，記得測試一下
 ## VSCode
 
 [VSCode BYOK文件](https://code.visualstudio.com/docs/agent-customization/language-models#_bring-your-own-language-model-key)
