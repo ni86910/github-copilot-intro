@@ -1,5 +1,6 @@
 [MyAI 168開發者文件](https://www.myai168.com/futaba/developer/)
 **注意**：有些組合似乎無法快取提示詞，導致token消耗增加，務必先測試一下
+ex. 簡單發送兩則訊息，若第二次的消耗沒有顯著下降，代表提示詞快取失敗
 ## VSCode
 
 [VSCode BYOK文件](https://code.visualstudio.com/docs/agent-customization/language-models#_bring-your-own-language-model-key)
@@ -17,7 +18,8 @@ copilot
 /logout
 ```
 
-### 2. 設定環境變數
+### 2. 設定環境變數(範例)
+詳細請參考官方文件，以獲得最新資訊
 
 | 環境變數                        | 要設定的值                                                    |  必填 | 說明                                                                    |
 | --------------------------- | -------------------------------------------------------- | --: | --------------------------------------------------------------------- |
@@ -33,4 +35,9 @@ copilot --model gpt-5.6-terra
 ```
 
 
+## 其他分享
+### VS Code 內建瀏覽器
+
+### AI 知識庫
+[LLM 知識庫 搭配 Obsidian 筆記軟體](https://www.youtube.com/watch?v=ZC8AI_jFWnU)
 
